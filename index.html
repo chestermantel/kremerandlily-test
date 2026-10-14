@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-<noscript><style>#cover{display:none !important}</style></noscript>
 <style>
 /* ============================================================
    Kremer & Lily — "The Engraved Suite"
@@ -65,29 +64,7 @@ main{position:relative;overflow-x:clip}
 .crest::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(69,20,31,.22)}
 .crest b{font-family:var(--script);font-weight:400;font-size:calc(var(--d)*.5);margin-top:calc(var(--d)*.04)}
 
-/* ============ Intro cover: oxblood plate, bouquet scatters open ============ */
-.cover{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;cursor:pointer;overflow:hidden;
-  background:radial-gradient(130% 110% at 50% 42%,#4a1622 0%,#330f18 52%,#210a11 100%)}
-.cover-plate{position:absolute;z-index:2;text-align:center;color:var(--page);pointer-events:none;
-  transition:opacity .7s ease,transform .9s ease}
-.cover.open .cover-plate{opacity:0;transform:translateY(-10px)}
-.cover-plate .crest{--d:72px;color:#f0e4cb}
-.cover-plate .crest::before{border-color:rgba(205,170,105,.75)}
-.cover-plate .crest::after{border-color:rgba(240,228,203,.3)}
-.cover-plate .lede{margin-top:1.1rem;font-style:italic;font-size:1.18rem;color:rgba(242,232,213,.9)}
-.cover-plate .tap{margin-top:.5rem;font-family:var(--sans);font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,232,213,.6)}
-.cover::after{content:"";position:absolute;left:50%;bottom:8%;transform:translateX(-50%);width:8px;height:8px;
-  border-right:1.5px solid var(--cream-faint);border-bottom:1.5px solid var(--cream-faint);rotate:45deg;opacity:.6;animation:nudge 2.4s ease-in-out infinite}
-@keyframes nudge{0%,100%{transform:translateX(-50%) translateY(0) rotate(45deg);opacity:.3}50%{transform:translateX(-50%) translateY(6px) rotate(45deg);opacity:.7}}
-.cover.open{cursor:default;pointer-events:none;opacity:0;transition:opacity .9s ease .4s}
-.cover.open::after{opacity:0}
-.bouquet{position:relative;width:1px;height:1px;animation:sway 6s ease-in-out infinite;z-index:1}
-@keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
-.bloom{position:absolute;max-width:none;left:50%;top:50%;width:calc(var(--s)*1vmin);
-  transform:translate(-50%,-50%) translate(calc(var(--x)*1vmin),calc(var(--y)*1vmin)) rotate(var(--r0,0deg));
-  transition:transform 1.3s cubic-bezier(.5,0,.15,1),opacity 1.1s ease;will-change:transform,opacity;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
-.cover.open .bloom{transform:translate(-50%,-50%) translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(1.5);opacity:0}
-@media(prefers-reduced-motion:reduce){.bouquet{animation:none}.cover,.bloom,.cover-plate{transition:none}.cover::after{display:none}}
+/* (intro cover removed per 10/13 feedback) */
 
 /* ============ Nav — engraved caps, crest brand ============ */
 .site-head{position:sticky;top:0;z-index:100;background:rgba(245,237,218,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -144,25 +121,24 @@ main{position:relative;overflow-x:clip}
 /* ============ Home — the invitation ============ */
 .hero{padding-block:clamp(2.4rem,6vw,4rem) clamp(2.8rem,6vw,4.6rem)}
 .invite{max-width:680px;text-align:center}
-.invite .crest{--d:66px;margin-bottom:1.3rem}
-.invite-fam{font-style:italic;font-size:1.22rem;color:var(--ink-soft)}
-.names{margin:.4rem 0 .6rem;color:var(--burgundy);font-weight:400;line-height:.92}
-.names .n{font-family:var(--script);font-size:clamp(3.3rem,13vw,6.8rem);display:block}
+.invite .crest{--d:66px;margin-bottom:1.1rem}
+.names{margin:.2rem 0 .6rem;color:var(--burgundy);font-weight:400;line-height:.92}
+.names .n{font-family:var(--script);font-size:clamp(3rem,12vw,6.4rem);display:block}
 .names .and{display:block;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--burgundy-3);margin:-.1em 0 -.05em}
-.invite-req{font-size:1.3rem;color:var(--ink);line-height:1.5}
-.invite-when{margin-top:1.3rem;font-size:1.3rem;color:var(--ink);line-height:1.5}
-.invite-when .yr{display:block}
-.invite-divide{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.2rem auto;max-width:280px;color:var(--gilt)}
+.invite-req{margin-top:.3rem;font-size:1.3rem;color:var(--ink);line-height:1.5}
+.invite-when{margin-top:.2rem;font-family:var(--serif);font-size:clamp(1.7rem,4.2vw,2.4rem);color:var(--burgundy);line-height:1.2}
+.invite-divide{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.3rem auto;max-width:300px;color:var(--gilt)}
 .invite-divide::before,.invite-divide::after{content:"";height:1px;flex:1;background:var(--gilt-line)}
 .invite-divide span{font-style:italic;font-size:1.05rem;color:var(--burgundy-3)}
 .invite-where{font-size:1.3rem;color:var(--ink);line-height:1.5}
 .invite-where .ven{font-style:italic}
-.invite-cta{margin-top:1.8rem}
-.hero-plate{margin:clamp(2.2rem,6vw,3.4rem) auto 0;max-width:min(92%,600px);padding:12px;background:var(--panel);
+.invite-note{max-width:46ch;margin:1.5rem auto 0;font-size:1.05rem;color:var(--ink-soft)}
+.hero-plate{margin:clamp(1.8rem,5vw,2.8rem) auto clamp(1.8rem,5vw,2.6rem);max-width:min(92%,600px);padding:12px;background:var(--panel);
   border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(69,20,31,.6)}
-.hero-plate::after{content:"";display:block}
 .hero-plate figure{position:relative;margin:0;outline:1px solid var(--gilt-line);outline-offset:-5px}
 .hero-plate img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.ph{display:grid;place-items:center;background:var(--cream);width:100%}
+.ph-label{font-family:var(--sans);font-style:normal;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--burgundy-3);opacity:.85}
 
 /* ============ Our Story ============ */
 .story-copy{max-width:60ch;margin-inline:auto;text-align:center;color:var(--ink-soft);font-size:1.3rem;line-height:1.56}
@@ -267,8 +243,9 @@ input[type=radio]{accent-color:var(--burgundy);width:1.05rem;height:1.05rem;curs
   .reveal.in{opacity:1;transform:none}
 }
 main{flex:1 0 auto;display:flex;flex-direction:column}
-main > section{display:none}
-main > section.is-active{display:flex;flex-direction:column;justify-content:center;flex:1 0 auto}
+main > section{order:2;border-top:1px solid var(--line)}
+main > #home{order:1;border-top:0}
+main > #rsvp{order:3}
 
 /* footer mark */
 .foot{border-top:1px solid var(--line);text-align:center;padding:1.8rem 1rem;color:var(--burgundy-3)}
@@ -280,38 +257,18 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
 <script>window.RSVP_LOOKUP_ENDPOINT="";/* test build — RSVP backend not wired */</script>
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- ============ Intro: oxblood plate, bouquet scatters ============ -->
-<div class="cover" id="cover" aria-label="Tap to open the invitation">
-  <div class="cover-plate">
-    <span class="crest"><b>K&amp;L</b></span>
-    <p class="lede">You are invited</p>
-    <p class="tap">Tap to open</p>
-  </div>
-  <div class="bouquet" id="bouquet">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-calla-top.png"   alt="" style="--s:29;--x:-2;--y:-25;--r0:-4deg;--tx:-6vw;--ty:-92vh;--rot:-25deg">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-tulip.png"       alt="" style="--s:27;--x:20;--y:-22;--r0:6deg;--tx:78vw;--ty:-66vh;--rot:48deg">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-calla-left.png"  alt="" style="--s:27;--x:-22;--y:-10;--r0:-6deg;--tx:-88vw;--ty:-22vh;--rot:-42deg">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-calla-right.png" alt="" style="--s:26;--x:19;--y:-7;--r0:5deg;--tx:88vw;--ty:-14vh;--rot:36deg">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-orchid.png"      alt="" style="--s:24;--x:-9;--y:-6;--r0:-3deg;--tx:-62vw;--ty:-44vh;--rot:-30deg">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-center.png"      alt="" style="--s:21;--x:4;--y:2;--r0:4deg;--tx:34vw;--ty:16vh;--rot:22deg">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-green.png"       alt="" style="--s:24;--x:13;--y:17;--r0:8deg;--tx:60vw;--ty:88vh;--rot:40deg">
-    <img class="bloom" src="https://kremerandlily.com/flowers/bloom-rose.png"        alt="" style="--s:33;--x:-9;--y:15;--r0:-2deg;--tx:-36vw;--ty:86vh;--rot:-46deg">
-  </div>
-</div>
-
 <header class="site-head">
   <nav class="nav" aria-label="Main">
     <a class="brand" href="#home" aria-label="Kremer and Lily — home"><span class="crest" aria-hidden="true"><b>K&amp;L</b></span></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu<span class="bars" aria-hidden="true"><span></span><span></span></span></button>
     <ul class="menu" id="nav-menu">
       <li><a href="#home">Home</a></li>
-      <li><a href="#story">Our Story</a></li>
-      <li><a class="rsvp-link" href="#rsvp">RSVP</a></li>
       <li><a href="#details">Details</a></li>
       <li><a href="#travel">Travel</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#registry">Registry</a></li>
+      <li><a class="rsvp-link" href="#rsvp">RSVP</a></li>
     </ul>
     <a class="egg" href="https://kremerandlily.com/peepeepoopoo/" title="don't" aria-label="a little secret">❦</a>
   </nav>
@@ -323,37 +280,19 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
   <section class="hero" id="home">
     <div class="wrap invite">
       <span class="crest reveal in" aria-hidden="true"><b>K&amp;L</b></span>
-      <p class="invite-fam reveal in">Together with their families</p>
       <h1 class="names reveal in"><span class="n">Kremer</span><span class="and">and</span><span class="n">Lily</span></h1>
-      <p class="invite-req reveal in">request the pleasure of your company<br>as they celebrate their marriage</p>
-      <p class="invite-when reveal in">Saturday, the eighteenth of September<span class="yr">two thousand twenty-seven, at half past four</span></p>
+      <!-- NOTE: final homepage photo pending from Lily — elegant placeholder until then -->
+      <figure class="hero-plate reveal in"><figure><div class="ph" style="aspect-ratio:3/2"><span class="ph-label">Photo coming soon</span></div></figure></figure>
+      <p class="invite-req reveal in">Please join us for our wedding celebration on</p>
+      <p class="invite-when reveal in">September 18, 2027</p>
       <div class="invite-divide reveal in" aria-hidden="true"><span>on the water</span></div>
       <p class="invite-where reveal in"><span class="ven">Lago Mar Beach Resort &amp; Club</span><br>Fort Lauderdale, Florida</p>
-      <div class="invite-cta reveal in"><a class="btn btn-solid" href="#rsvp">Reply to the invitation</a></div>
+      <p class="invite-note reveal in">We&rsquo;ll be adding details here as the day gets closer &mdash; please check back for updates.</p>
     </div>
-    <!-- NOTE: final homepage photo pending; placeholder uses an existing photo -->
-    <figure class="hero-plate reveal in"><figure><img src="https://kremerandlily.com/photos/picnic-kiss.jpg" alt="Kremer and Lily"></figure></figure>
   </section>
 
-  <!-- Our Story -->
-  <section class="sec" id="story">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 class="sec-title">Our Story</h2>
-        <div class="rule" aria-hidden="true"></div>
-      </div>
-      <!-- NOTE: short Our Story paragraph pending from Lily — placeholder below -->
-      <p class="story-copy reveal">We can&rsquo;t wait to share how we met, fell in love, and decided to spend the rest of our lives together. We&rsquo;re still putting this part into words — check back soon.</p>
-      <!-- NOTE: five photos, largest in the center; final selections pending (placeholders) -->
-      <div class="story-row reveal">
-        <figure class="sp s1"><span><img src="https://kremerandlily.com/photos/bw-ring.jpg" alt=""></span></figure>
-        <figure class="sp s2"><span><img src="https://kremerandlily.com/photos/red-jacket.jpg" alt=""></span></figure>
-        <figure class="sp s3"><span><img src="https://kremerandlily.com/photos/picnic-kiss.jpg" alt="Kremer and Lily"></span></figure>
-        <figure class="sp s2"><span><img src="https://kremerandlily.com/photos/beach.jpg" alt=""></span></figure>
-        <figure class="sp s1"><span><img src="https://kremerandlily.com/photos/bw-ring.jpg" alt=""></span></figure>
-      </div>
-    </div>
-  </section>
+  <!-- Our Story removed for now per 10/13 feedback; may return later. -->
+  <!-- RSVP lives at the end of the page (placed last via CSS order). -->
 
   <!-- RSVP -->
   <section class="sec" id="rsvp">
@@ -429,10 +368,10 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
         <div class="rule" aria-hidden="true"></div>
       </div>
       <div class="plate reveal">
-        <h3>Ceremony &amp; Reception</h3>
-        <p class="when">Saturday, September 18, 2027 · 4:30–10:00 in the evening</p>
+        <h3>Wedding Ceremony &amp; Reception</h3>
+        <p class="when">Saturday, September 18, 2027 · 4:30–10:00 PM</p>
         <p class="addr">Lago Mar Beach Resort &amp; Club<br>1700 South Ocean Lane<br>Fort Lauderdale, FL 33316</p>
-        <p class="blurb">Join us for our indoor ceremony beginning promptly at 4:30 PM. Afterward, we&rsquo;ll celebrate with cocktails, dinner, and an evening on the dance floor.</p>
+        <p class="blurb">Join us for our indoor ceremony beginning at 4:30 PM, followed by cocktail hour, dinner, and an evening on the dance floor.</p>
       </div>
     </div>
   </section>
@@ -446,24 +385,13 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
       </div>
       <div class="travel-wrap">
         <div class="tblock reveal">
-          <h3>Accommodations</h3>
-          <p class="addr">Lago Mar Beach Resort &amp; Club · 1700 South Ocean Lane, Fort Lauderdale, FL 33316</p>
-          <p>Our ceremony and reception will take place at Lago Mar Beach Resort &amp; Club, where we&rsquo;ve reserved a room block for our guests.</p>
-          <p>We&rsquo;d love for you to make a weekend of it and spend some extra time with us. Relax on the private beach, lounge by one of the two pools, meet us for a drink at the bar, or enjoy a little friendly competition with mini golf or pickleball.</p>
+          <h3>Hotel</h3>
+          <p>We&rsquo;ve reserved a room block at Lago Mar Beach Resort &amp; Club at a special rate for our guests. Our wedding festivities will take place at the resort, so staying here is a convenient way to enjoy the celebration with us!</p>
+          <div class="callout">To book, call <a href="tel:18005246627">1-800-524-6627</a> and ask for the &ldquo;Kremer and Lily Wedding&rdquo; room block. Please reserve your stay by August 19, 2027 to guarantee a room within our block.</div>
         </div>
         <div class="tblock reveal">
-          <h3>Wedding Room Block</h3>
-          <ul class="tlist">
-            <li>September 17–19, 2027, with checkout on Sunday.</li>
-            <li>$225 per night, plus applicable taxes, for a one-bedroom suite with a king bed or double beds.</li>
-            <li>Check-in begins at 4:00 PM; checkout is by 11:00 AM.</li>
-          </ul>
-          <div class="callout">To reserve, call <a href="tel:18005246627">1-800-524-6627</a> and ask for the &ldquo;Kremer and Lily Wedding&rdquo; room block to receive our group rate. Rooms are subject to availability. The booking deadline is August 19, 2027; rooms booked afterward are subject to availability and prevailing rates.</div>
-        </div>
-        <div class="tblock reveal">
-          <h3>Getting Here</h3>
-          <p>We recommend flying into Fort Lauderdale–Hollywood International Airport (FLL), roughly a 10–15 minute taxi or rideshare from Lago Mar, depending on traffic.</p>
-          <p class="tnote">Valet and self-parking are available at the hotel.</p>
+          <h3>Airport</h3>
+          <p>We recommend flying into Fort Lauderdale–Hollywood International Airport (FLL). Lago Mar Beach Resort &amp; Club is approximately a 10–15 minute taxi or ride-share trip from the airport.</p>
         </div>
       </div>
     </div>
@@ -477,15 +405,10 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
         <div class="rule" aria-hidden="true"></div>
       </div>
       <div class="faq reveal">
-        <details><summary>When&rsquo;s the RSVP deadline?</summary><p class="a">Please RSVP by August 7, 2027, through the RSVP tab on our website.</p></details>
+        <details><summary>When&rsquo;s the RSVP deadline?</summary><p class="a">Please RSVP by July 31, 2027, through the RSVP tab on our website.</p></details>
         <details><summary>How do I know if I have a plus-one?</summary><p class="a">If we have reserved a plus-one for you, it will be specified on your invitation. We&rsquo;ve thoughtfully planned our guest list, so we kindly ask that you only RSVP for those listed.</p></details>
-        <details><summary>What time should I arrive for the ceremony?</summary><p class="a">Please arrive between 4:00 and 4:15 PM to allow time for parking, finding your seat, and settling in. Our ceremony will begin promptly at 4:30 PM.</p></details>
         <details><summary>Will the ceremony and reception be indoors?</summary><p class="a">Yes, both our ceremony and reception will take place indoors.</p></details>
-        <details><summary>What is the dress code?</summary><p class="a">Black-tie optional. Dress to impress! Think tuxedos, dark suits, formal gowns, or elegant cocktail dresses. We&rsquo;d love to see color, texture, and a little personality, so feel free to have fun with your look while keeping it formal.</p></details>
-        <details><summary>Are there accommodations near the venue or hotel room blocks?</summary><p class="a">We&rsquo;ve reserved a room block at Lago Mar Beach Resort &amp; Club, where our ceremony and reception will take place. To book, call 1-800-524-6627 and ask for the &ldquo;Kremer and Lily Wedding&rdquo; room block to receive our group rate. We recommend booking early, as availability is limited. Please see the Travel tab for room rates and the booking deadline.</p></details>
-        <details><summary>What&rsquo;s the best airport to use?</summary><p class="a">We recommend flying into Fort Lauderdale–Hollywood International Airport (FLL), approximately a 10–15-minute taxi or rideshare trip from Lago Mar Beach Resort &amp; Club, depending on traffic.</p></details>
-        <details><summary>Where can I park?</summary><p class="a">Valet and self-parking are available at the hotel.</p></details>
-        <details><summary>How do I let you know about dietary restrictions?</summary><p class="a">Please include any dietary restrictions or food allergies when you RSVP.</p></details>
+        <details><summary>What is the dress code?</summary><p class="a">Black-tie optional.</p></details>
       </div>
     </div>
   </section>
@@ -498,16 +421,14 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
         <p class="sec-sub">A few of our favorite moments</p>
         <div class="rule" aria-hidden="true"></div>
       </div>
-      <!-- NOTE: gallery photos pending; placeholders reuse existing photos, mixed -->
+      <!-- NOTE: gallery photos pending from Lily; elegant placeholders until then -->
       <div class="gal-grid reveal">
-        <figure><span><img src="https://kremerandlily.com/photos/picnic-kiss.jpg" alt="Kremer and Lily"></span></figure>
-        <figure><span><img src="https://kremerandlily.com/photos/beach.jpg" alt="Kremer and Lily"></span></figure>
-        <figure><span><img src="https://kremerandlily.com/photos/red-jacket.jpg" alt="Kremer and Lily"></span></figure>
-        <figure><span><img src="https://kremerandlily.com/photos/bw-ring.jpg" alt="Kremer and Lily"></span></figure>
-        <figure><span><img src="https://kremerandlily.com/photos/beach.jpg" alt="Kremer and Lily"></span></figure>
-        <figure><span><img src="https://kremerandlily.com/photos/picnic-kiss.jpg" alt="Kremer and Lily"></span></figure>
-        <figure><span><img src="https://kremerandlily.com/photos/bw-ring.jpg" alt="Kremer and Lily"></span></figure>
-        <figure><span><img src="https://kremerandlily.com/photos/red-jacket.jpg" alt="Kremer and Lily"></span></figure>
+        <figure><span class="ph" style="aspect-ratio:1/1"><em class="ph-label">Photo</em></span></figure>
+        <figure><span class="ph" style="aspect-ratio:1/1"><em class="ph-label">Photo</em></span></figure>
+        <figure><span class="ph" style="aspect-ratio:1/1"><em class="ph-label">Photo</em></span></figure>
+        <figure><span class="ph" style="aspect-ratio:1/1"><em class="ph-label">Photo</em></span></figure>
+        <figure><span class="ph" style="aspect-ratio:1/1"><em class="ph-label">Photo</em></span></figure>
+        <figure><span class="ph" style="aspect-ratio:1/1"><em class="ph-label">Photo</em></span></figure>
       </div>
     </div>
   </section>
@@ -537,27 +458,7 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
 (function(){
   "use strict";
 
-  /* ---- Intro: bouquet scatters open ---- */
-  var cover=document.getElementById("cover");
-  if(cover){
-    var KEY="lk_opened", seen=false;
-    try{seen=sessionStorage.getItem(KEY)==="1";}catch(e){}
-    if(location.search.indexOf("nc")>=0){seen=true;}/* preview bypass */
-    if(seen){ cover.setAttribute("hidden",""); }
-    else{
-      document.body.classList.add("locked");
-      var opened=false;
-      var open=function(){
-        if(opened) return; opened=true;
-        try{sessionStorage.setItem(KEY,"1");}catch(e){}
-        cover.classList.add("open");
-        document.body.classList.remove("locked");
-        setTimeout(function(){cover.setAttribute("hidden","");},1700);
-      };
-      cover.addEventListener("click",open);
-      document.addEventListener("keydown",function(e){if(!opened&&(e.key==="Enter"||e.key===" "||e.key==="Escape")){e.preventDefault();open();}});
-    }
-  }
+  /* (intro cover removed per 10/13 feedback) */
 
   /* ---- Mobile nav ---- */
   var toggle=document.querySelector(".nav-toggle"), menu=document.getElementById("nav-menu");
@@ -576,25 +477,17 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
     reveals.forEach(function(el){io.observe(el);});
   } else { reveals.forEach(function(el){el.classList.add("in");}); }
 
-  /* ---- Tabbed pages: the top nav swaps sections (no long scroll) ---- */
+  /* ---- Single-scroll nav: smooth-scroll to a section, keep the URL clean ---- */
   var mainEl=document.getElementById("main");
   if(mainEl){
     var sections=[].slice.call(mainEl.querySelectorAll("section[id]"));
-    var navLinks=[].slice.call(document.querySelectorAll('.menu a[href^="#"]'));
     var ids={}; sections.forEach(function(s){ids[s.id]=1;});
-    var DEFAULT_TAB="home";
-    var curId=function(){var h=(location.hash||"").replace(/^#/,"");return ids[h]?h:DEFAULT_TAB;};
-    var showTab=function(id,scroll){
-      if(!ids[id]) id=DEFAULT_TAB;
-      sections.forEach(function(s){
-        var on=s.id===id; s.classList.toggle("is-active",on);
-        if(on){var els=s.querySelectorAll(".reveal");for(var i=0;i<els.length;i++){els[i].classList.add("in");}}
-      });
-      navLinks.forEach(function(a){
-        if(a.getAttribute("href")==="#"+id){a.setAttribute("aria-current","page");}
-        else{a.removeAttribute("aria-current");}
-      });
-      if(scroll!==false){try{window.scrollTo({top:0,behavior:"instant"});}catch(e){window.scrollTo(0,0);}}
+    var navLinks=[].slice.call(document.querySelectorAll('.menu a[href^="#"], .brand[href^="#"]'));
+    var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+    var goTo=function(id){
+      var el=document.getElementById(id); if(!el) return;
+      if(id==="home"){window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});}
+      else{el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}
     };
     document.addEventListener("click",function(e){
       var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
@@ -602,10 +495,26 @@ main > section.is-active{display:flex;flex-direction:column;justify-content:cent
       var id=a.getAttribute("href").replace(/^#/,"");
       if(!ids[id]) return;
       e.preventDefault();
-      if(location.hash!=="#"+id){location.hash=id;}else{showTab(id);}
+      goTo(id);
     });
-    window.addEventListener("hashchange",function(){showTab(curId());});
-    showTab(curId(),false);
+    /* scrollspy — mark the section you're reading in the nav */
+    if("IntersectionObserver" in window){
+      var byId={}; navLinks.forEach(function(a){byId[a.getAttribute("href").replace(/^#/,"")]=a;});
+      var spy=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(!e.isIntersecting) return;
+          navLinks.forEach(function(a){a.removeAttribute("aria-current");});
+          var a=byId[e.target.id]; if(a) a.setAttribute("aria-current","page");
+        });
+      },{rootMargin:"-45% 0px -50% 0px"});
+      sections.forEach(function(s){spy.observe(s);});
+    }
+    /* old #section links / bookmarks: jump there once, then clean the URL */
+    var h=(location.hash||"").replace(/^#/,"");
+    if(h && ids[h]){
+      try{window.history.replaceState(null,"",location.pathname+location.search);}catch(e){}
+      setTimeout(function(){goTo(h);},60);
+    }
   }
 })();
 </script>
